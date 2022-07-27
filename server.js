@@ -67,7 +67,7 @@ const aliens = {
 }
 
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + 'index.html')
+    res.sendFile(__dirname + '/lcars-nemesis-blue.html')
 })
 
 app.get('/api/:alienName', (req,res) => {
@@ -80,5 +80,5 @@ app.get('/api/:alienName', (req,res) => {
 })
 
 app.listen(process.env.PORT || PORT, () =>{
-    console.log(`The server is runnong port ${PORT}.`)
+    console.log(`The server is runnong on port ${PORT}.`)
 })
