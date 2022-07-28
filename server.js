@@ -34,7 +34,7 @@ const aliens = {
     'romulans': {
         'speciesName': 'Romulans',
         'homeworld': 'Romulus',
-        'features': 'Pointed ears, upward-currving eyebrows, green tinge to the skin, diagonal smooth forehead ridges (sometimes)',
+        'features': 'Pointed ears, upward-curving eyebrows, green tinge to the skin, diagonal smooth forehead ridges (sometimes)',
         'interestingFact': 'Share a common ancestory with Vulcans, though none of the emoitional discipline. ROmulus has a sister planet, Remus, on whcih the Remans are seen as lessed beings.',
         'notableExamples': "Pardek, Tal'aura, Narissa",
         'image': 'https://static.wikia.nocookie.net/aliens/images/1/1d/Zzzd7.jpg',
@@ -42,7 +42,7 @@ const aliens = {
     'borg': {
         'speciesName': '(The) Borg',
         'homeworld': 'Unknown (delta Quadrant)',
-        'features': 'pale skin, numerous interior and exterior biological modifications',
+        'features': 'Pale skin, numerous interior and exterior biological modifications',
         'interestingFact': 'No single genetic lineage, species propagates by assimilating individuals via nanotechnology, led by a hive mind guided by a single "queen" indidivudal. DO  NOT APPROACH unless under specific diplomatic order from Starfleet Command.',
         'notableExamples': 'Borg Queen',
         'image': 'https://static.wikia.nocookie.net/aliens/images/7/76/Borg.jpg',
@@ -50,7 +50,7 @@ const aliens = {
     'gorn': {
         'speciesName': 'Gorn',
         'homeworld': 'Unknown (Alpha Quadran)',
-        'features': 'scaly green skin, large, iridescent eyes, powerful build, sharp teeth',
+        'features': 'Scaly green skin, large, iridescent eyes, powerful build, sharp teeth',
         'interestingFact': 'Extremely militaristic and driven to conquer, but also possess advanced scientific knowledge allowing for superior bio-weapons.',
         'notableExamples': 'Gorn Captain',
         'image': 'https://static.wikia.nocookie.net/aliens/images/',
