@@ -20,7 +20,7 @@ const aliens = {
         'homeworld': 'Vulcan',
         'features': 'Pointed ears, upward -curving eyebrows',
         'interestingFact': 'Practice an extreme form of emotional regulation that focuses on logic above all else, pioneered by a Vulcan named Surak',
-        'notableExamples': "Spokc, T'pol, Sarek",
+        'notableExamples': "Spock, T'pol, Sarek",
         'image': 'https://static.wikia.nocookie.net/aliens/images/7/75/Vulcans-FirstContact.jpg',
     },
     'klingons': {
@@ -28,7 +28,7 @@ const aliens = {
         'homeworld': "Qo'nos",
         'features': 'Large stature, pronounced ridges on the forehead, stylized facial hair',
         'interestingFact': 'Highly skilled in weapons and battle. Their facial ridges were lost as the result of a virus in 2154, but were subsequently restored by 2269',
-        'notableExamples': 'Word, Kor, Kang',
+        'notableExamples': 'Worf, Kor, Kang',
         'image': 'https://static.wikia.nocookie.net/aliens/images/7/74/Kruge.jpg',
     },
     'romulans': {
@@ -44,7 +44,7 @@ const aliens = {
         'homeworld': 'Unknown (delta Quadrant)',
         'features': 'pale skin, numerous interior and exterior biological modifications',
         'interestingFact': 'No single genetic lineage, species propagates by assimilating individuals via nanotechnology, led by a hive mind guided by a single "queen" indidivudal. DO  NOT APPROACH unless under specific diplomatic order from Starfleet Command.',
-        'notableExamples': '',
+        'notableExamples': 'Borg Queen',
         'image': 'https://static.wikia.nocookie.net/aliens/images/7/76/Borg.jpg',
     },
     'gorn': {
