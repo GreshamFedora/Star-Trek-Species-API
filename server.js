@@ -1,17 +1,20 @@
 const express = require('express')
 const app = express()
 const cors = require('cors')
-const { platform } = require('os')
 const PORT = 8000
+const MongoClient = require('mongodb').MongoClient
+const connectionString = 'mongodb+srv://Zefirus:XndEJQFXriCU86c@cluster0.ozpab.mongodb.net/?retryWrites=true&w=majority'
+
 
 app.use(cors())
-
+app.use(express.json())
+/*
 const aliens = {
     'humans': {
         'speciesName': 'Humans',
         'homeworld': 'Earth',
         'features': 'Rounded ears, hair on head and face (sometimes)',
-        'interestingFact': 'Founded the United Federation of Planets after first contact with the Vulcans',
+        'interestingFact': 'Founded the United Federation of Planets after first contact with the Vulcans.',
         'notableExamples': 'James T. Kirk, Zephram Cochran, Jean Luc Picard',
         'image': 'https://static.wikia.nocookie.net/aliens/images/6/68/The_City_on_the_Edge_of_Forever.jpg',
     },
@@ -26,7 +29,7 @@ const aliens = {
     'klingons': {
         'speciesName': 'Klingons',
         'homeworld': "Qo'nos",
-        'features': 'Large stature, pronounced ridges on the forehead, stylized facial hair',
+        'features': 'Large stature, pronounced ridges on the forehead, stylized facial hair.',
         'interestingFact': 'Highly skilled in weapons and battle. Their facial ridges were lost as the result of a virus in 2154, but were subsequently restored by 2269',
         'notableExamples': 'Worf, Kor, Kang',
         'image': 'https://static.wikia.nocookie.net/aliens/images/7/74/Kruge.jpg',
@@ -35,7 +38,7 @@ const aliens = {
         'speciesName': 'Romulans',
         'homeworld': 'Romulus',
         'features': 'Pointed ears, upward-curving eyebrows, green tinge to the skin, diagonal smooth forehead ridges (sometimes)',
-        'interestingFact': 'Share a common ancestory with Vulcans, though none of the emoitional discipline. ROmulus has a sister planet, Remus, on whcih the Remans are seen as lessed beings.',
+        'interestingFact': 'Share a common ancestory with Vulcans, though none of the emoitional discipline. ROmulus has a sister planet, Remus, on whcih the Remans are seen as lesser beings.',
         'notableExamples': "Pardek, Tal'aura, Narissa",
         'image': 'https://static.wikia.nocookie.net/aliens/images/1/1d/Zzzd7.jpg',
     },
@@ -65,20 +68,38 @@ const aliens = {
     },
 
 }
+*/
 
-app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/index.html')
-})
+MongoClient.connect(connectionString)
+    .then(client => {
+        console.log('Connected to Database')
+        const db = client.db('star-trek-api')
+        const infoCollection = db.collection('alien-info')
 
-app.get('/api/:alienName', (req,res) => {
-    const aliensName = req.params.alienName.toLowerCase()
-    if (aliens[aliensName]) {
-        res.json(aliens[aliensName])
-    } else {
-        res.json(aliens['humans'])
-    }
+
+    app.get('/', (req, res) => {
+        res.sendFile(__dirname + '/index.html')
+    })
+
+    app.get('/api/:alienName', (req,res) => {
+        const aliensName = req.params.alienName.toLowerCase()
+        infoCollection.find({name: aliensName}).toArray()
+        .then(results => {
+            console.log(results)
+            res.json(results[0])
+        })
+        .catch(error => console.error(error))
+/*        if (infoCollection[aliensName]) {
+            res.json(infoCollection[aliensName])
+        } else {
+            res.json(infoCollection['humans'])
+        }
+*/
+    })
+
 })
+.catch(error => console.error(error))
 
 app.listen(process.env.PORT || PORT, () =>{
-    console.log(`The server is runnong on port ${PORT}.`)
+    console.log(`The server is running.`)
 })
