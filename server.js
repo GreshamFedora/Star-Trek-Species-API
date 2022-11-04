@@ -1,9 +1,8 @@
 const express = require('express')
 const app = express()
 const cors = require('cors')
-const PORT = 8000
 const MongoClient = require('mongodb').MongoClient
-const connectionString = 'mongodb+srv://Zefirus:XndEJQFXriCU86c@cluster0.ozpab.mongodb.net/?retryWrites=true&w=majority'
+const dotenv = require("dotenv").config();
 
 
 app.use(cors())
@@ -70,7 +69,7 @@ const aliens = {
 }
 */
 
-MongoClient.connect(connectionString)
+MongoClient.connect(process.env.connectionString)
     .then(client => {
         console.log('Connected to Database')
         const db = client.db('star-trek-api')
