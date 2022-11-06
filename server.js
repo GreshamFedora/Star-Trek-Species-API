@@ -68,7 +68,7 @@ const aliens = {
 
 }
 */
-
+//added to heroku config vars
 MongoClient.connect(process.env.connectionString)
     .then(client => {
         console.log('Connected to Database')
