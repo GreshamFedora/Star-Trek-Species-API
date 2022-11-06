@@ -68,12 +68,16 @@ const aliens = {
 
 }
 */
+
+console.log(`process.env.connectionString = "${process.env.connectionString}"`)
+
 //added to heroku config vars
 MongoClient.connect(process.env.connectionString)
     .then(client => {
         console.log('Connected to Database')
         const db = client.db('star-trek-api')
         const infoCollection = db.collection('alien-info')
+        
 
 
     app.get('/', (req, res) => {
